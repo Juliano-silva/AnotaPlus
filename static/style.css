@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(23, 10, 31);
+    color: white;
+}
+
+#Add{
+    text-align: center;
+}
+
+#Sidebar{
+    border-right: 0.2vh solid rgb(255, 255, 255);
+    width: 20vh;
+    height: 100vh;
+    background-color: rgb(53, 47, 47);
+    color: white;
+    position: fixed;
+    top: 0;
+    text-align: center;
+}
+
+#CloseSidebar{
+    all: unset;
+    cursor: pointer;
+    padding: 0.3vh;
+    position: fixed;
+    left: 0;
+    font-size: 3vh;
+}
+
+#SidebarConteudo{
+    border: 0.2vh solid transparent;
+    margin-top: 4vh;
+    height: 90%;
+    overflow: auto;
+}
+
+#SidebarConteudo > h1{
+    font-size: 2vh;
+    display: block;
+    padding: 0.4vh;
+    cursor: pointer;
+}
+
+#SidebarConteudo > h1:hover{
+    border: 0.2vh solid white;
+    background-color: black;
+}
+
+.ConteudoCaixa{
+    display: block;
+    margin: auto;
+    text-align: center;
+    border: 0.2vh solid white;
+    width: 50%;
+    padding: 2vh;
+    margin-top: 2vh;
+    border-radius: 0.5vh;
+    background-color: rgb(43, 17, 59);
+    color: yellow;
+    cursor: pointer;
+    font-size: 3vh;
+}
+
+#Input,#Conteudo > button{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
