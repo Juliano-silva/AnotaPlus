@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AnotaPlus</title>
     <link rel="stylesheet" href="../static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body id="Body">
     <div id="Add">
         <h1>Adicionar uma Seção</h1>
+        <div id="Centralizar">
         <input type="text" placeholder="Nome do arquivo" id="Name">
         <input type="text" placeholder="Adicionar uma Font" id="Font">
         <input type="text" placeholder="Adicionar o Link da Font" id="Font_Link">
         <input type="text" placeholder="Adicionar um Background Url" id="BackURL">
-        <input type="file" placeholder="Adicionar um Background File" id="BackFile">
-        <button onclick="Salvar()">Salvar</button>
+        <label for="AddBackFile">Enviar arquivo</label>
+        <form action="/Data" id="AddBackFiles"  method="post" enctype="multipart/form-data">
+            <input type="file" style="display: none;" accept="image/*" name="AddBackFile" placeholder="Adicionar um Background File" id="AddBackFile">
+            <button>Click Enviar Arquivo</button>
+    </form>
+    <input type="color" id="Color">
+    <button onclick="Salvar()">Salvar arquivo</button>
+    <button id="Update" style="display: none;">Update</button>
+        </div>
+    </div>
+    <div id="AddPágina">
+        <h1>Adicionar uma Página</h1>
+        <div id="Centralizar">
+            <input type="text" placeholder="Nome do arquivo" id="Input">
+            <button id="AddPágiFunc">Salvar</button>
+            <button id="UpdatePágina" style="display: none;">Update</button>
+        </div>
     </div>
     <button id="OpenSidebar">☰</button>
     <div id="Sidebar">
@@ -22,9 +39,13 @@
         <div id="SidebarConteudo"></div>
         <button onclick="Abrir_Input()" id="AddSeção">+ Adicionar Seção</button>
     </div>
-    <div id="SidebarPáginas"></div>
+    <div id="SidebarPáginas">
+        <div id="SidebarPáginaConteudo"></div>
+        <button class="EnviarBtn" onclick="AddFunc()">+ Adicionar Página</button>
+    </div>
     <div id="Conteudo"></div>
     <div id="Configuration"></div>
+    <div id="EscolhaFile"></div>
 </body>
 <script src="../static/script.js"></script>
 </html>

@@ -16,7 +16,7 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 
-#Add{
+#Add,#AddPágina{
     text-align: center;
     background: linear-gradient(135deg , rgba(255,255,255,0.1),rgba(255,255,255,0));
     backdrop-filter: blur(1vh);
@@ -29,25 +29,73 @@ body{
     padding: 2vh;
 }
 
-#Add > input, #Add > textarea{
-    all: unset;
-    border: 0.2vh solid white;
+:is(#Add,#AddPágina) > h1{
     padding: 2vh;
-    width: 80%;
+}
+
+#AddInputsConteudo{
+    padding: 2vh;
+    text-align: center;
+}
+
+input,textarea,label{
+    all: unset;
+    border: 0.3vh solid white;
+    padding: 2vh;
+    width: 70%;
     border-radius: 2vh;
     display: block;
     margin: auto;
-    margin-top: 2vh;
+    background-color: black;
+    margin-top: 3vh;
 }
 
-#Add > button{
+label{
+    text-align: center;
+    width: 60%;
+}
+
+input[type="color"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    height: 5em;
+    padding: 0;
+    width: 5em;
+  }
+
+:is(input,textarea)::placeholder{
+    color: white;
+}
+
+#Centralizar{
+    border: 0.2vh solid transparent;
+    height: 85%;
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+}
+
+#Centralizar::-webkit-scrollbar{
+    width: 0px;
+}
+
+#Centralizar > button, #AddPágiFunc,.Button_Input,form > button{
     all: unset;
-    width: 20vh;
+    width: 20%;
     border: 0.4vh solid white;
+    background-color: black;
     border-radius:4vh;
     cursor: pointer;
-    margin-top: 5vh;
     padding: 2vh;
+    height: 5vh;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 1vh;
 }
 
 #Sidebar,#SidebarPáginas{
@@ -76,25 +124,52 @@ body{
     font-size: 3vh;
 }
 
-#SidebarConteudo{
+
+#SidebarConteudo,#SidebarPáginaConteudo{
     border: 0.2vh solid transparent;
     margin-top: 4vh;
     height: 90%;
     overflow: auto;
 }
 
-#SidebarConteudo > h1{
-    font-size: 2.2vh;
-    display: block;
-    padding: 0.6vh;
-    cursor: pointer;
+#SidebarPáginas{
+    display: none;
 }
 
-#SidebarConteudo > h1:hover{
+#CaixaConteudoCaixa{
+    display: flex;
+    height: 4vh;
+}
+
+:is(#SidebarConteudo,#SidebarPáginaConteudo) > div > h1{
+    font-size: 2.3vh;
+    padding: 0.6vh;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 2vh;
+    border: 0.2vh solid transparent;
+    overflow: auto;
+    width: 20vh;
+}
+
+:is(#SidebarConteudo,#SidebarPáginaConteudo) > div > button{
+    all: unset;
+    cursor: pointer;
+    font-size: 2vh;
+}
+
+:is(#SidebarConteudo,#SidebarPáginaConteudo) > div > button:hover{
+    text-shadow: 0.2vh 0.2vh 0.3vh white;
+}
+
+:is(#SidebarConteudo,#SidebarPáginaConteudo) > div > h1::-webkit-scrollbar{
+    width: 0px;
+}
+
+#CaixaConteudoCaixa:hover{
     border: 0.2vh solid white;
     background-color: black;
 }
-
 
 /* .ConteudoCaixa{
     display: block;
@@ -126,6 +201,11 @@ body{
     height: 100%;
     display: none;
     z-index: 6;
+    overflow: auto;
+}
+
+#Inputs::-webkit-scrollbar{
+    width: 0px;
 }
 
 #Add_Conteudo{
@@ -135,8 +215,13 @@ body{
     bottom: 0;
     padding: 2vh;
     cursor: pointer;
-    left: 0;
-    z-index: 2;
+    right: 0;
+    z-index: 0;
+    border-radius: 1vh 0vh 0vh 0vh;
+    background-color: rgb(23, 10, 31);
+    width: 20vh;
+    height: 5vh;
+    font-size: 2vh;
 }
 
 #Configuration{
@@ -151,38 +236,79 @@ body{
 }
 
 .ImgCreate{
-    width: 100%;
+    width: 20%;
     height: 20vh;
     cursor: pointer;
 }
 
 #Caixa_DADOS{
-    background: rgba(0, 0, 0, 0.77);
-    filter: opacity(98%);
+    background: rgb(23, 10, 31,0.71);
     padding: 2vh;
-    height: 100vh;
+    height: 96vh;
     right: 0;
-
+    fill-opacity: 80%;
+    border: 0.2vh solid transparent;
+    overflow: auto;
 }
 
-#Dados_Dots{
-    display: flex;
-    flex-flow: row wrap;
+#Caixa_DADOS::-webkit-scrollbar{
+    width: 0px;
 }
+
+#Caixa_DADOS > h1{
+    color: white;
+    font-size: 6vh;
+    padding-left: 2vh;
+    border-bottom:0.4vh solid white ;
+    width: 70vh;
+    overflow: auto;
+}
+#Caixa_DADOS > h3{
+    font-size: 2vh;
+    padding-left: 2vh;
+}
+
+#Caixa_DADOS > h1::-webkit-scrollbar{
+    width: 0px;
+}
+
+
 
 #Caixa_MiniText{
-    border: 0.2vh solid white;
-    background-color: rgb(3, 2, 2);
-    width: 40vh;
-    height: 60vh;
-    margin-left: 1vh;
-    margin-top: 2vh;
+    border: 0.4vh solid white;
+    display: block;
+    background: rgb(23, 10, 31,0.71);
+    fill-opacity: 80%;
+    width: 80%;
+    word-break: break-all;
+    height: 70vh;
     text-align: center;
+    border-radius: 2vh;
+    overflow: auto;
+    margin: auto;
+    margin-top: 3vh;
+    padding: 2vh;
 }
 
 #Caixa_MiniText > img{
-    width: 100%;
-    height: 20vh;
+    width: 40%;
+    height: 40vh;
+    padding: 2vh;
+}
+
+#Caixa_MiniText > h1{
+    font-size: 6vh;
+    padding: 2vh;
+    text-transform: uppercase;
+}
+
+#Caixa_MiniText > p{
+    font-size: 4vh;
+    padding: 1vh;
+}
+
+#Caixa_MiniText::-webkit-scrollbar{
+    width: 0px;
 }
 
 #AddSeção,.EnviarBtn{
@@ -198,8 +324,60 @@ body{
     font-weight: bold;
 }
 
+#Caixa_MiniText > button{
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    width: 50%;
+}
+
+
 #FecharConfig{
     border: 0.2vh solid white;
     right: 0;
     bottom: 0;
+}
+
+body::-webkit-scrollbar{
+    width: 0px;
+}
+
+#Config_Conteudo{
+    border: 0.2vh solid transparent;
+    display: block;
+    width: 95%;
+    margin: auto;
+    overflow: auto;
+}
+
+#Config_Conteudo > h1{
+    color: white;
+    padding: 2vh;
+    margin: auto;
+    font-size: 6vh;
+}
+#Config_Conteudo > img{
+    display: inline-block;
+    width: 20vh;
+    height: 20vh;
+    padding-left: 2vh;
+    cursor: pointer;
+}
+
+#Config_Conteudo::-webkit-scrollbar{
+    width: 0px;
+}
+
+:is(#Config_Conteudo) > h3,h2{
+    padding-left: 2vh;
+    cursor: pointer;
+    font-size: 3vh;
+}
+:is(#Config_Conteudo > h3 , #Config_Conteudo> h2,#Caixa_MiniText > button):hover{
+    text-shadow: 0.2vh 0.2vh 0.3vh purple;
+    color: yellow;
+}
+
+#Caixa_MiniText > button:hover{
+    background-color: white;
 }
